@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "host": "localhost",
+        "user": "root",
+        "password": "samundra",
+        "database": "sparks",
+        "driver": "mysql",
+        "multipleStatements": true
+    }
+}

@@ -1,0 +1,21 @@
+form(ng-submit="addPopulation()")
+	p country name
+	select(ng-model="population.country" ng-options="c.country for c in  countries" class="form-control" ng-change="population.city = cities[0]")
+		option(value="" selected) Select Country
+	br
+	p country citry
+	select(ng-model="population.city" class="form-control" ng-options="c.name for c in cities | filter:{country_id:population.country.id}:true")
+		option(value="" selected) Select City
+	br
+	p Age Group
+	select(class="form-control" ng-model="population.type" ng-init="population.type ='child'"  ng-options="o as o for o in ['child','young','old']")
+		options(value="child" selected) child
+	br
+	p Population of male
+	input(class="form-control" type="number" ng-model="population.male" required)
+	br
+	p Population of female
+	input(class="form-control" type="number" ng-model="population.female" required)
+	br
+	input(type="submit" class="btn btn-primary")
+

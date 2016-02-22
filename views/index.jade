@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1.label.label-default Population Information Search
+	hr
+	button.btn.btn-default(ui-sref="home") Home
+	button.btn.btn-default(ui-sref="country") Country
+	button.btn.btn-default(ui-sref="city") City
+	button.btn.btn-default(ui-sref="population") Population
+	button.btn.btn-default(ui-sref="login" ng-if="!loginStatus") Login
+	button.btn.btn-default(ui-sref="logout" ng-if="loginStatus") Logout
+	ui-view

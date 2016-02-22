@@ -1,0 +1,23 @@
+{
+  "name": "Sprks",
+  "version": "1",
+  "authors": [
+    "samundrak <samundrak@yahoo.com>"
+  ],
+  "description": "Test Samundra",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "ui-router#~0.2.18",
+    "bootstrap": "~3.3.6",
+    "underscore": "~1.8.3",
+    "angular": "~1.5.0"
+  }
+}

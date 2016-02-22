@@ -1,0 +1,6 @@
+p country name
+form(ng-submit="addCity()")
+	select(ng-model="city.country" ng-options="c.country for c in  countries" class="form-control")
+	br
+	input(type="text" class="form-control" ng-model="city.name")
+	input(type="submit" class="btn btn-primary")

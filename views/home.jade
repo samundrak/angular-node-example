@@ -1,0 +1,44 @@
+hr
+.container
+	.row
+		.col-md-4
+			select(ng-model="dashboard.country" ng-change="dashboard.city =  dashboard.country.cities[0]"   ng-options="x.country for x in report" class="form-control") 
+				option(value="") Select Country
+		.col-md-4
+			select(ng-model="dashboard.city"    ng-options="x.name for x in dashboard.country.cities" class="form-control") 
+				option(value="") Select City
+		.col-md-4
+			select(ng-model="dashboard.type"  ng-init="dashboard.type = 'male'" ng-options="o as o for o in ['male','female']" class="form-control") 
+				option(value="") Select Type
+	hr
+	.row
+		
+		table.table
+			tr 
+				th Population
+				th Number
+			tr
+				td Old 
+				td {{ dataOf('old')  || 0}}
+			tr 
+				td Young 
+				td {{ dataOf('young') || 0 }}
+			tr
+				td Child 
+				td {{ dataOf('child') || 0}}
+
+
+	.row
+		.col-md-12
+			p Summary Report
+			table.table 
+				tr 
+					th SN 
+					th Country Name
+					th Population
+				tr(ng-if="!sort.length")
+					td No Data found
+				tr(ng-repeat="x in sort")
+					th {{ $index+ 1}}
+					th {{ x.name}}
+					th  {{x.sum}}
